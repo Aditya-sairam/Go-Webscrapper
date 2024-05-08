@@ -11,6 +11,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
+// Hello there!
 type item struct {
 	Name         string `db:"name"`
 	Price        string `db:"price"`
