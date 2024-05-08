@@ -1,3 +1,4 @@
+// This file contains the necessery code for the First Tutorial
 package main
 
 import (
@@ -35,7 +36,7 @@ func webScrap() {
 			h.ForEach("div.col.search_reviewscore.responsive_secondrow", func(_ int, h *colly.HTMLElement) {
 				h.ForEach("span.search_review_summary.positive", func(_ int, h *colly.HTMLElement) {
 					linkStr := h.Attr("data-tooltip-html")
-					// fmt.Println("Reviews : ")
+
 					out := extractSubstring(linkStr)
 					// fmt.Println(out)
 					if len(out) > 0 {
@@ -61,7 +62,7 @@ func webScrap() {
 				})
 			})
 			h.ForEach("span.title", func(_ int, h *colly.HTMLElement) {
-				// fmt.Println(h.Text)
+
 				name := h.Text
 				item.Name = name
 			})
